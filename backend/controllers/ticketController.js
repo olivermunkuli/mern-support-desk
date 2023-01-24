@@ -47,7 +47,7 @@ const getTickets = asyncHandler(async (req, res) => {
 });
 
 // @desc   Create new ticket
-// @route  GET /api/tickets
+// @route  POST /api/tickets
 // @access Private
 const createTicket = asyncHandler(async (req, res) => {
   const { product, description } = req.body;
