@@ -4,6 +4,7 @@ const User = require('../models/userModel');
 
 const protect = asyncHandler(async (req, res, next) => {
   let token = null;
+
   if (
     req.headers.authorization &&
     req.headers.authorization.startsWith('Bearer')
@@ -17,7 +18,7 @@ const protect = asyncHandler(async (req, res, next) => {
       next();
     } catch (err) {
       res.status(401);
-      throw new Error('Not authosised');
+      throw new Error('Not 1 authosised');
     }
   }
   if (!token) {
