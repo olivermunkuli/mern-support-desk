@@ -1,6 +1,27 @@
+// const express = require('express');
+// const router = express.Router();
+// const { protect } = require('../middleware/authMiddleware');
+// const {
+//   updateTicket,
+//   deleteTicket,
+//   getTicket,
+//   getTickets,
+//   createTicket,
+// } = require('../controllers/ticketController');
+
+// router.route('/').get(getTickets).post(createTicket);
+
+// router
+//   .route('/:id')
+//   .get(getTicket)
+//   .delete(deleteTicket)
+//   .put(protect, updateTicket);
+
+// module.exports = router;
+
 const express = require('express');
 const router = express.Router();
-const { protect } = require('../middleware/authMiddleware');
+const { protect2, protect } = require('../middleware/authMiddleware');
 const {
   updateTicket,
   deleteTicket,

@@ -20,8 +20,6 @@ const getTicket = asyncHandler(async (req, res) => {
     throw new Error('Ticket not found');
   }
 
-  console.log(ticket.user, ticket.user.toString(), req.user.id);
-
   if (ticket.user.toString() !== req.user.id) {
     res.status(401);
     throw new Error('Not Authorised');
@@ -91,8 +89,6 @@ const deleteTicket = asyncHandler(async (req, res) => {
     res.status(401);
     throw new Error('Ticket not found');
   }
-
-  console.log(ticket.user, ticket.user.toString(), req.user.id);
 
   if (ticket.user.toString() !== req.user.id) {
     res.status(401);
