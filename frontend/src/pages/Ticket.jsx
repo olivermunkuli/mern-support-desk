@@ -4,7 +4,11 @@ import { FaPlus } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import { useSelector, useDispatch } from 'react-redux';
 import { getTicket, closeTicket } from '../features/tickets/ticketSlice';
-import { getNotes, reset as resetNotes } from '../features/notes/noteSlice';
+import {
+  getNotes,
+  createNote,
+  reset as resetNotes,
+} from '../features/notes/noteSlice';
 
 import { useParams, useNavigate } from 'react-router-dom';
 import BackButton from '../components/BackButton';
@@ -53,7 +57,7 @@ function Ticket() {
 
   const onNoteSubmit = (e) => {
     e.preventDefault();
-    console.log('submit');
+    dispatch(createNote({ noteText, ticketId }));
     closeModal();
   };
 
