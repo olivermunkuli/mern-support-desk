@@ -7,24 +7,19 @@ import { toast } from 'react-toastify';
 import TicketItem from '../components/TicketItem';
 
 function Tickets() {
-  const { isError, message, tickets, isLoading } = useSelector(
+  const { isError, isSuccess, message, tickets, isLoading } = useSelector(
     (state) => state.tickets
   );
 
   const dispatch = useDispatch();
 
   useEffect(() => {
+    // dispatch(reset());
     dispatch(getTickets());
     return () => {
       dispatch(reset());
     };
   }, []);
-
-  useEffect(() => {
-    if (isError) {
-      toast.error(message);
-    }
-  }, [isError, message]);
 
   if (isLoading) {
     return <Spinner />;
